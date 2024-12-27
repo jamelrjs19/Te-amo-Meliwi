@@ -1,0 +1,238 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Gallery</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+        header {
+            background: linear-gradient(to right, #4caf50, #81c784);
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+
+        header p {
+            margin: 5px 0 0;
+            font-size: 1.2rem;
+        }
+
+        .section {
+            margin: 20px;
+        }
+
+        .section h2 {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            padding: 15px;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .gallery-item img,
+        .gallery-item video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover img,
+        .gallery-item:hover video {
+            transform: scale(1.1);
+        }
+
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            position: relative;
+            max-width: 90%;
+            max-height: 90%;
+        }
+
+        .modal-content img,
+        .modal-content video {
+            width: 100%;
+            height: auto;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #fff;
+            border: none;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>TE AMO MELIWI</h1>
+    <p>Amor jsjsjssjs wenas noches, dias o tardes a la hora que entres a este link jsjsjs, es un detalle en el que he ido trabajado para poder tener nuestros recuerdos presente y ademas una forma de poder pareciar todo lo que hemos pasado juntos jjsjsjs creo q esta de mas pero te lo vuelvo a decir, TE AMOOOOO Y MUCHO
+        Psdt: Aun falta mejorar
+    </p>
+</header>
+
+<div class="section">
+    <h2>Fotos</h2>
+    <div class="gallery" id="gallery-photos">
+        <div class="gallery-item">
+            <img src="WhatsApp Image 2024-12-26 at 7.01.58 PM (1).jpeg" alt="Foto 1">
+        </div>
+        <div class="gallery-item">
+            <img src="WhatsApp Image 2024-12-26 at 7.01.58 PM.jpeg" alt="Foto 1">
+        </div><div class="gallery-item">
+            <img src="WhatsApp Image 2024-12-26 at 7.01.59 PM (1).jpeg" alt="Foto 1">
+        </div><div class="gallery-item">
+            <img src="WhatsApp Image 2024-12-26 at 7.01.59 PM (2).jpeg" alt="Foto 1">
+        </div><div class="gallery-item">
+            <img src="WhatsApp Image 2024-12-26 at 7.01.59 PM (3).jpeg" alt="Foto 1">
+        </div><div class="gallery-item">
+            <img src="WhatsApp Image 2024-12-26 at 7.01.59 PM (4).jpeg" alt="Foto 1">
+        </div><div class="gallery-item">
+            <img src="WhatsApp Image 2024-12-26 at 7.01.59 PM (5).jpeg" alt="Foto 1">
+        </div><div class="gallery-item">
+            <img src="WhatsApp Image 2024-12-26 at 7.01.59 PM.jpeg" alt="Foto 1">
+        </div><div class="gallery-item">
+            <img src="WhatsApp Image 2024-12-26 at 7.02.00 PM (1).jpeg" alt="Foto 1">
+        </div><div class="gallery-item">
+            <img src="WhatsApp Image 2024-12-26 at 7.02.00 PM (2).jpeg" alt="Foto 1">
+        </div><div class="gallery-item">
+            <img src="WhatsApp Image 2024-12-26 at 7.02.00 PM (3).jpeg" alt="Foto 1">
+        </div><div class="gallery-item">
+            <img src="WhatsApp Image 2024-12-26 at 7.02.00 PM (4).jpeg" alt="Foto 1">
+        </div><div class="gallery-item">
+            <img src="WhatsApp Image 2024-12-26 at 7.02.00 PM (5).jpeg" alt="Foto 1">
+        </div><div class="gallery-item">
+            <img src="WhatsApp Image 2024-12-26 at 7.02.00 PM.jpeg" alt="Foto 1">
+        </div><div class="gallery-item">
+            <img src="WhatsApp Image 2024-12-26 at 7.02.01 PM (1).jpeg" alt="Foto 1">
+        </div><div class="gallery-item">
+            <img src="WhatsApp Image 2024-12-26 at 7.02.01 PM (2).jpeg" alt="Foto 1">
+        </div><div class="gallery-item">
+            <img src="WhatsApp Image 2024-12-26 at 7.02.02 PM (3).jpeg" alt="Foto 1">
+        </div><div class="gallery-item">
+            <img src="WhatsApp Image 2024-12-26 at 7.02.02 PM.jpeg" alt="Foto 1">
+    </div>
+</div>
+
+<div class="section">
+    <h2>Videos</h2>
+    <div class="gallery" id="gallery-videos">
+        <div class="gallery-item">
+            <video src="WhatsApp Video 2024-12-18 at 11.31.23 PM (1).mp4" controls muted></video>
+        </div>
+        <div class="gallery-item">
+            <video src="WhatsApp Video 2024-12-18 at 11.31.23 PM (2).mp4" controls muted></video>
+        </div>
+        <div class="gallery-item">
+            <video src="WhatsApp Video 2024-12-18 at 11.31.23 PM.mp4" controls muted></video>
+        </div>
+        <div class="gallery-item">
+            <video src="WhatsApp Video 2024-12-18 at 11.31.24 PM.mp4" controls muted></video>
+        </div>
+        <div class="gallery-item">
+            <video src="WhatsApp Video 2024-12-18 at 11.31.25 PM.mp4" controls muted></video>
+        </div>
+        <div class="gallery-item">
+            <video src="WhatsApp Video 2024-12-18 at 11.31.26 PM.mp4" controls muted></video>
+        </div>
+        <div class="gallery-item">
+            <video src="WhatsApp Video 2024-12-18 at 11.31.33 PM.mp4" controls muted></video>
+        </div>
+        <div class="gallery-item">
+            <video src="WhatsApp Video 2024-12-18 at 11.31.34 PM.mp4" controls muted></video>
+        </div>
+        <div class="gallery-item">
+            <video src="WhatsApp Video 2024-12-19 at 11.02.54 PM.mp4" controls muted></video>
+        </div>
+        <div class="gallery-item">
+            <video src="WhatsApp Video 2024-12-20 at 7.39.53 AM.mp4" controls muted></video>
+        </div>
+        <div class="gallery-item">
+            <video src="WhatsApp Video 2024-12-23 at 11.07.30 AM.mp4" controls muted></video>
+        </div>
+    </div>
+</div>
+
+<div class="modal" id="modal">
+    <div class="modal-content" id="modal-content">
+        <button class="modal-close" id="modal-close">&times;</button>
+    </div>
+</div>
+
+<script>
+    const galleryPhotos = document.getElementById('gallery-photos');
+    const galleryVideos = document.getElementById('gallery-videos');
+    const modal = document.getElementById('modal');
+    const modalContent = document.getElementById('modal-content');
+    const modalClose = document.getElementById('modal-close');
+
+    function handleGalleryClick(event) {
+        if (event.target.tagName === 'IMG' || event.target.tagName === 'VIDEO') {
+            const clone = event.target.cloneNode(true);
+            modalContent.innerHTML = '';
+            modalContent.appendChild(modalClose);
+            modalContent.appendChild(clone);
+            modal.classList.add('active');
+        }
+    }
+
+    galleryPhotos.addEventListener('click', handleGalleryClick);
+    galleryVideos.addEventListener('click', handleGalleryClick);
+
+    modalClose.addEventListener('click', () => {
+        modal.classList.remove('active');
+    });
+
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            modal.classList.remove('active');
+        }
+    });
+</script>
+
+</body>
+</html>
